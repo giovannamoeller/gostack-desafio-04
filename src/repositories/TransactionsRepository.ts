@@ -23,7 +23,7 @@ class TransactionsRepository {
     return this.transactions;
   }
 
-  public getBalance() {
+  public getBalance(): Balance {
     const incomes = this.transactions.filter(transaction => transaction.type === 'income');
     const outcomes = this.transactions.filter(transaction => transaction.type === 'outcome');
     const sumIncomes = incomes.map(income => income.value).reduce((acc, atual) => acc + atual);
